@@ -1,0 +1,2 @@
+{"level":"info","message":"Calculator microservice running at http://localhost:3000","timestamp":"2025-03-16T03:05:22.304Z"}
+{"level":"info","message":"Request: GET / from ::1","timestamp":"2025-03-16T03:06:01.132Z"}
