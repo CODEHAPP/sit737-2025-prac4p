@@ -78,6 +78,46 @@ app.get('/divide', (req, res) => {
     res.json({ result });
 });
 
+// 新增的高级算术操作：指数运算
+app.get('/exponentiation', (req, res) => {
+    const { base, exponent } = req.query;
+    if (!base || !exponent || isNaN(base) || isNaN(exponent)) {
+        logger.error('Invalid input for exponentiation');
+        return res.status(400).json({ error: 'Invalid input' });
+    }
+    const result = Math.pow(parseFloat(base), parseFloat(exponent));
+    logger.info(`Exponentiation: ${base} ^ ${exponent} = ${result}`);
+    res.json({ result });
+});
+
+// 新增的高级算术操作：平方根
+app.get('/sqrt', (req, res) => {
+    const { number } = req.query;
+    if (!number || isNaN(number) || parseFloat(number) < 0) {
+        logger.error('Invalid input for square root');
+        return res.status(400).json({ error: 'Invalid input or negative number' });
+    }
+    const result = Math.sqrt(parseFloat(number));
+    logger.info(`Square Root: sqrt(${number}) = ${result}`);
+    res.json({ result });
+});
+
+// 新增的高级算术操作：取模运算
+app.get('/modulo', (req, res) => {
+    const { dividend, divisor } = req.query;
+    if (!dividend || !divisor || isNaN(dividend) || isNaN(divisor)) {
+        logger.error('Invalid input for modulo');
+        return res.status(400).json({ error: 'Invalid input' });
+    }
+    if (parseFloat(divisor) === 0) {
+        logger.error('Attempt to divide by zero in modulo');
+        return res.status(400).json({ error: 'Cannot divide by zero' });
+    }
+    const result = parseFloat(dividend) % parseFloat(divisor);
+    logger.info(`Modulo: ${dividend} % ${divisor} = ${result}`);
+    res.json({ result });
+});
+
 // 服务器监听端口
 app.listen(port, () => {
     logger.info(`Calculator microservice running at http://localhost:${port}`);

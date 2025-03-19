@@ -1,2 +1,6 @@
 {"level":"info","message":"Calculator microservice running at http://localhost:3000","timestamp":"2025-03-16T03:05:22.304Z"}
 {"level":"info","message":"Request: GET / from ::1","timestamp":"2025-03-16T03:06:01.132Z"}
+{"level":"info","message":"Calculator microservice running at http://localhost:3000","timestamp":"2025-03-19T07:49:39.281Z"}
+{"level":"info","message":"Request: GET /add?num1=10&num2=5 from ::1","timestamp":"2025-03-19T07:50:16.861Z"}
+{"level":"info","message":"Addition: 10 + 5 = 15","timestamp":"2025-03-19T07:50:16.862Z"}
+{"level":"info","message":"Request: GET /favicon.ico from ::1","timestamp":"2025-03-19T07:50:16.951Z"}
