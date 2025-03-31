@@ -122,3 +122,6 @@ app.get('/modulo', (req, res) => {
 app.listen(port, () => {
     logger.info(`Calculator microservice running at http://localhost:${port}`);
 });
+app.get('/', (req, res) => {
+    res.send('Calculator Microservice is running!');
+});
